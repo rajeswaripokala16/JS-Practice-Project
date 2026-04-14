@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+ 
+    <h2>Circles Positioned Directly On the SVG Path</h2>
+
+<div class="svg-container">
+
+  <!-- SVG BELOW the circles -->
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200">
+    <path id="motionPath"
+      style="fill:none;stroke:aqua;stroke-width:2px;"
+      d="M 11.55 99.35 C 24.52 76.12 45.85 33.67 133.65 33.75 C 191.53 33.81 224.83 47.23 256.82 125.38 C 291.86 210.96 473.57 187.05 476.98 98.63">
+    </path>
+	  
+<path d="M 272.46 186.23 C 226.49 186.23 189.23 148.97 189.23 103.01 C 189.23 57.05 226.49 19.79 272.46 19.79 C 318.42 19.79 355.69 57.05 355.69 103.01 C 355.69 148.97 318.42 186.23 272.46 186.23 Z" style="stroke: rgb(0, 0, 0); fill: none; stroke-width: 1; display:none;" id="end"></path>
+
+  </svg>
+
+  <!-- Circles OVER the svg -->
+  <div class="wrapper">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+</div>
+
+<button id="add">Add Circle</button>
+
+
+
+<div class="message">
+	<p>Each <span>.circle</span> gets an incremented value for it's own <span>--distance</span> custom property.</p>
+	<p>That <span>--distance</span> value is then used to increase its <span>distance-offset</span> on the path.</p>
+</div>
+
+<pre class="prettyprint lang-css" style="margin:20px 0;">
+.circle {
+  /* Distance assigned via JS */
+  offset-distance: var(--distance, 0%);
+  /* animate to new position */
+  transition: offset-distance 0.4s ease;
+}
+
+</pre>
+
+
+
+<pre class="prettyprint lang-html" id="output">
+	
+</pre>
+
+
+
+
+
+
+
+</body>
+</html>

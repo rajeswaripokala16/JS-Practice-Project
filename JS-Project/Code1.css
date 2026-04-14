@@ -1,0 +1,83 @@
+body {
+    background: #111;
+    color: #fff;
+    font-family: sans-serif;
+    padding: 40px;
+  }
+
+  .svg-container {
+    position: relative;
+    width: 500px;
+    height: 200px;
+    margin-bottom: 20px;
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+	 overflow:visible;
+  }
+
+  /* Circles sit OVER the SVG */
+  .wrapper {
+    position: absolute;
+    inset: 0;       /* full overlay */
+    pointer-events: none; /* optional: circles don’t block clicks on the SVG */
+  }
+
+  .circle {
+    width: 20px;
+    height: 20px;
+    background: dodgerblue;
+    border-radius: 50%;
+    position: absolute;
+
+    /* Use the path INSIDE the SVG */
+    offset-path: path("M 11.55 99.35 C 24.52 76.12 45.85 33.67 133.65 33.75 C 191.53 33.81 224.83 47.23 256.82 125.38 C 291.86 210.96 473.57 187.05 476.98 98.63");
+
+    /* Distance assigned via JS */
+    offset-distance: var(--distance, 0%);
+    /* animate to new position */
+    transition: offset-distance 0.4s ease;
+  }
+
+ button {
+	padding: 10px 20px;
+	background: #32c098;
+	border: none;
+	color: white;
+	border-radius: 6px;
+	cursor: pointer;
+	font-size: 16px;
+	text-shadow:1px 1px 2px rgb(0, 0, 0, 0.5);
+	transition: background 0.5s;
+}
+
+button:hover {
+	text-shadow:1px 1px 2px rgb(0, 0, 0, 0.8);
+	background: #2decb6;
+}
+
+p {
+	color:#CFD8DC;
+	font-size:1.1em;
+	line-height:1.5;
+}
+
+
+
+
+.message span {
+	font-family:monospace;
+	font-weight: bold;
+   color: #00e6ff;
+   padding: 3px 10px;
+   background: #002d43;
+   border-radius: 6px;
+}
+
+body pre.prettyprint {
+	margin:0;
+	max-width:650px;
+}
